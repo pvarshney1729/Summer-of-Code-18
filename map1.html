@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script type="text/javascript">
+    var markers = [];
+    var uniqueId = 1;
+    window.onload = function () {
+        var mapOptions = {
+            center: new google.maps.LatLng(21.0000, 78.0000),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+ 
+        //Attach click event handler to the map.
+        google.maps.event.addListener(map, 'click', function (e) {
+ 
+            //Determine the location where the user has clicked.
+            var location = e.latLng;
+ 
+            //Create a marker and placed it on the map.
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+ 
+            //Set unique id
+            marker.id = uniqueId;
+            uniqueId++;
+ 
+            //Attach click event handler to the marker.
+            google.maps.event.addListener(marker, "click", function (e) {
+                var content = 'Latitude: ' + location.lat() + '<br />Longitude: ' + location.lng();
+                content += "<br /><input type = 'button' va;ue = 'Delete' onclick = 'DeleteMarker(" + marker.id + ");' value = 'Delete' />";
+                var infoWindow = new google.maps.InfoWindow({
+                    content: content
+                });
+                infoWindow.open(map, marker);
+            });
+ 
+            //Add marker to the array.
+            markers.push(marker);
+        });
+    };
+    function DeleteMarker(id) {
+        //Find and remove the marker from the Array
+        for (var i = 0; i < markers.length; i++) {
+            if (markers[i].id == id) {
+                //Remove the marker from Map                  
+                markers[i].setMap(null);
+ 
+                //Remove the marker from array.
+                markers.splice(i, 1);
+                return;
+            }
+        }
+    };
+</script>
+</head>
+<body>
+<div id="dvMap" style="width: 500px; height: 500px">
+</div>
+<br />
+</body>
+</html>
