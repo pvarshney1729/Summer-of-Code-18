@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<title>Summer Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="front.css">
+<script src="front.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="front.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+</head>
+<body id="myPage">
+
+<div class="w3-display-container w3-animate-opacity">
+  <img src="back.jpeg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" >POPPUP</button>
+  </div>
+</div>
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container">
+      <span onclick="document.getElementById('0007').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+
+  </div>
+</div>
+<a href="signup.html" target="_blank">free signup</a><br>
+<a href="ulogin.html" target="_blank">user login</a><br>
+<a href="alogin.html" target="_blank">admin login</a>
+
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>Summer of code project team</h2>
+<p>Meet the team</p>
+
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="soumya.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Soumya Ranjan Dash</h3>
+  <p>Web Designer</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="triptesh.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Triptesh Biswas</h3>
+  <p>Backend developer</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="shivam.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Shivam Kumar</h3>
+  <p>Web Designer</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="vishesh.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Vishesh Kaushik</h3>
+  <p>Support</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="sahil.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Mohd. Sahil Khan</h3>
+  <p>Support</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="prateek.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Mohd. Sahil Khan</h3>
+  <p>Support</p>
+</div>
+
+
+</div>
+</div>
+
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p>Our Contact details</p>
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> HAll-2,IIT Kanpur,Kanpur,Uttar Pradesh</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +91-9113701996 </p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> krshivam@iitk.ac.in</p>
+    </div>
+    <div class="w3-col m7">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name*</label>
+        <input class="w3-input" type="text" name="Name " required>
+      </div>
+      <div class="w3-section">
+        <label>Email*</label>
+        <input class="w3-input" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message*</label>
+        <input class="w3-input" type="text" name="Message" required>
+      </div>
+      <input class="w3-check" type="checkbox" checked name="Like">
+      <label>I Like it!</label>
+      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+                <script src="front.js"></script>
+
+<!-- Google Maps -->
+<div id="googleMap" style="width:100%;height:420px;"></div>
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(26.5137179, 80.22654369999998);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4qG7WIi9ajrdWEJRZVYZLeV3YcrjEdg8&callback=myMap"></script>
+
+</body>
+</html>
